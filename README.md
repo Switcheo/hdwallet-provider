@@ -1,24 +1,28 @@
-# @truffle/hdwallet-provider
-HD Wallet-enabled Web3 provider. Use it to sign transactions for addresses derived from a 12 or 24 word mnemonic.
+# @switcheo/hdwallet-provider
+
+This is a fork of the HD Wallet-enabled Web3 provider from [@truffle/hdwallet-provider](https://github.com/trufflesuite/truffle/tree/develop/packages/hdwallet-provider).
+
+This fork updates the web3 package and fixes typings.
+
+Use it to sign transactions for addresses derived from a 12 or 24 word mnemonic.
 
 ## Install
 
-```
-$ npm install @truffle/hdwallet-provider
+```bash
+npm install @switcheo/hdwallet-provider
 ```
 
 ## Requirements
-```
-Node >= 7.6
-Web3 ^1.2.0
-```
+
+- Node >= 7.6
+- Web3 ^1.2.9
 
 ## General Usage
 
 You can use this provider wherever a Web3 provider is needed, not just in Truffle. For Truffle-specific usage, see next section.
 
 ```javascript
-const HDWalletProvider = require("@truffle/hdwallet-provider");
+const HDWalletProvider = require("@switcheo/hdwallet-provider");
 const Web3 = require("web3");
 const mnemonic = "mountains supernatural bird..."; // 12 word mnemonic
 let provider = new HDWalletProvider(mnemonic, "http://localhost:8545");
@@ -57,13 +61,12 @@ Parameters:
 | `shareNonce` | `boolean` | `true` | [ ] | If false, a new WalletProvider will track its own nonce-state |
 | `wallet_hdpath` | `string` | `"m/44'/60'/0'/0/"` | [ ] | If specified, will tell the wallet engine what derivation path should use to derive addresses. |
 
-
 ### Private Keys
 
 Instead of a mnemonic, you can alternatively provide a private key or array of private keys as the first parameter. When providing an array, `address_index` and `num_addresses` are fully supported.
 
 ```javascript
-const HDWalletProvider = require("@truffle/hdwallet-provider");
+const HDWalletProvider = require("@switcheo/hdwallet-provider");
 //load single private key as string
 let provider = new HDWalletProvider("3f841bf589fdf83a521e55d51afddc34fa65351161eead24f064855fc29c9580", "http://localhost:8545");
 
@@ -74,6 +77,7 @@ const privateKeys = [
 ];
 provider = new HDWalletProvider(privateKeys, "http://localhost:8545", 0, 2); //start at address_index 0 and load both addresses
 ```
+
 **NOTE: This is just an example. NEVER hard code production/mainnet private keys in your code or commit them to git. They should always be loaded from environment variables or a secure secret management system.**
 
 ## Truffle Usage
@@ -81,8 +85,9 @@ provider = new HDWalletProvider(privateKeys, "http://localhost:8545", 0, 2); //s
 You can easily use this within a Truffle configuration. For instance:
 
 truffle-config.js
+
 ```javascript
-const HDWalletProvider = require("@truffle/hdwallet-provider");
+const HDWalletProvider = require("@switcheo/hdwallet-provider");
 
 const mnemonic = "mountains supernatural bird ...";
 
