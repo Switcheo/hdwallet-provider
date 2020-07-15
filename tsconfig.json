@@ -12,11 +12,6 @@
     ],
     "outDir": "dist",
     "baseUrl": ".",
-    "paths": {
-      "ethereumjs-wallet/hdkey": [
-        "typings/ethereumjs-wallet/hdkey"
-      ]
-    },
   },
   "include": [
     "./src/**/*.ts",
