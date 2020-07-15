@@ -13,14 +13,10 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "typings/*"
+      "ethereumjs-wallet/hdkey": [
+        "typings/ethereumjs-wallet/hdkey"
       ]
     },
-    "typeRoots": [
-      "./typings",
-      "../../node_modules/@types/mocha"
-    ]
   },
   "include": [
     "./src/**/*.ts",

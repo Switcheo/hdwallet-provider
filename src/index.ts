@@ -1,8 +1,7 @@
 import "source-map-support/register";
 import * as bip39 from "bip39";
 import * as EthUtil from "ethereumjs-util";
-import ethJSWallet from "ethereumjs-wallet";
-import EthereumHDKey from "ethereumjs-wallet/hdkey";
+import ethJSWallet, { hdkey as EthereumHDKey } from "ethereumjs-wallet";
 import { Transaction } from "ethereumjs-tx";
 // @ts-ignore
 import ProviderEngine from "@trufflesuite/web3-provider-engine";
