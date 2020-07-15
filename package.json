@@ -1,0 +1,54 @@
+{
+  "name": "@switcheo/hdwallet-provider",
+  "description": "HD Wallet-enabled Web3 provider",
+  "license": "MIT",
+  "author": "Tim Coulter <tim@trufflesuite.com>",
+  "homepage": "https://github.com/switcheo/hdwallet-provider#readme",
+  "repository": "https://github.com/switcheo/hdwallet-provider",
+  "bugs": {
+    "url": "https://github.com/switcheo/hdwallet-provider/issues"
+  },
+  "version": "1.0.38",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "test": "yarn build && mocha --exit -r ts-node/register test/**/*.test.ts"
+  },
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@trufflesuite/web3-provider-engine": "15.0.0-2",
+    "any-promise": "^1.3.0",
+    "bindings": "^1.5.0",
+    "bip39": "^3.0.2",
+    "ethereumjs-tx": "^2.1.2",
+    "ethereumjs-util": "^7.0.3",
+    "ethereumjs-wallet": "^1.0.0",
+    "source-map-support": "^0.5.19",
+    "web3": "1.2.9",
+    "web3-core-helpers": "^1.2.9"
+  },
+  "devDependencies": {
+    "@types/bip39": "^2.4.2",
+    "@types/ethereum-protocol": "^1.0.1",
+    "@types/mocha": "^5.2.7",
+    "@types/web3-provider-engine": "^14.0.0",
+    "ganache-core": "2.10.2",
+    "mocha": "8.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "3.9.6"
+  },
+  "resolutions": {
+    "bip39/@types/node": "^12.6.1"
+  },
+  "keywords": [
+    "etheruem",
+    "hd",
+    "mnemonic",
+    "provider",
+    "wallet"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
