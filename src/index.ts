@@ -129,7 +129,7 @@ class HDWalletProvider {
           } else {
             cb("Account not found");
           }
-          const tx = new Transaction(txParams);
+          const tx = new Transaction(txParams, { chain: txParams.chainId });
           tx.sign(pkey as Buffer);
           const rawTx = `0x${tx.serialize().toString("hex")}`;
           cb(null, rawTx);
